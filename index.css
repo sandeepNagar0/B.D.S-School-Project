@@ -357,12 +357,7 @@ header{
   position: relative;
 }
 
-.images {
-  width: 500%;
-  display: flex;
-  transition: transform 0.5s ease-in-out;
 
-}
 
 .images img{
   width: 100vw;
@@ -424,12 +419,12 @@ header{
     gap: 10px;
     list-style: none;
     margin: 30px 0;
+    flex-wrap: wrap;
 }
 
 .detail-items ul li{
     padding: 8px 30px;
     border-radius: 5px;
-
     background: var(--secandary);
 }
 
@@ -453,6 +448,7 @@ header{
     display: flex;
     justify-content: space-around;
     align-items: center;
+    flex-wrap: wrap;
 }
 
 .teacher{
@@ -1138,3 +1134,141 @@ header{
 }
 /* Copyright Line End */
 /* Footer End */
+
+/* Responsive Design Start*/
+/* For Tablet Start */
+@media (max-width:992px) {
+    .container{
+      max-width: 95%;
+    }
+    
+    #scrollbtn{
+        display: none;
+    }
+    /* Header */
+    
+    .header-content{
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+        height: auto;
+        padding: 10px 0px;
+        word-spacing: 1px;
+        letter-spacing: .6px;
+        gap: 10px;
+    }
+
+    .left ul, .right ul{
+        justify-content: flex-start;
+        flex-wrap: wrap;
+        gap: 2px;
+
+    }
+    
+    .left ul li a, .right ul li a{
+        font-size: 14px;
+        line-height: 0px;
+    }
+     /* Header */
+
+    /* Contact */
+    .contect{
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+        gap: 15px;
+    }
+
+    .info-container{
+        justify-content: start;
+    }
+
+    .info p {
+       font-size: 14px;
+       line-height: 1.5;
+    }
+
+    .contect-section h3{
+        display: none;
+
+    }
+    /* Contact */
+
+    /* Navbar */
+
+    .navbar ul{
+        flex-wrap: wrap;
+        align-items: center;
+        gap: 10px;
+        padding: 10px;
+    }
+    
+    .navbar ul li::after{
+       display: none;
+    }
+    /* Navbar */
+
+    /* Images */
+
+    .slider{
+        width: 100%;
+        height: 200px;
+    }
+    
+    .images img{
+        width: 100%;
+        height: 200px;
+    }
+    /* Images */
+
+    /* Classroom Teacher */
+    .classroom{
+        gap: 10px;
+        justify-content: flex-start;
+        align-items: center;
+        margin-left: 30px;
+    }
+    /* Classroom Teacher */
+
+    /* Chairman's */
+    .ch-message{
+       flex-wrap: wrap;
+
+    }
+
+    .ch-left,.ch-right{
+       flex-basis: 100%;
+       background: var(--secandary);
+    }
+    /* Chairman's */
+
+    /* Acivment And Activity */
+      .activity{
+        flex-direction: column;
+      }
+
+      .act-box{
+        width: 100%;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        padding: 10px 0;
+      }
+
+      .act-box .act-img{
+        width: 100%;
+      }
+
+      .act-box .act-img img{
+        width: 100%;
+        height: 200px;
+      }
+      .act-box .act-img h3{
+        text-align: center;
+      }
+    /* Acivment And Activity */
+}
+
+/* For Mobile End */
+/* Responsive Design For Tablet End */
