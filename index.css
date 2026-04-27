@@ -345,7 +345,12 @@ header{
 
 /* Nav Dorp Down Lists End */
 
+/* Navbar Mobile start */
+.mobile-navbar{
+    display: none;
 
+}
+/* Navbar Mobile End */
 /* Navbar End */
 
 
@@ -404,12 +409,6 @@ header{
     margin: 10px auto;
     font-size: 18px;
     text-align: center;
-}
-
-.p2-details{
-    font-size: 20px;
-    text-align: center;
-    margin-top: 20px;
 }
 
 .detail-items ul{
@@ -1088,12 +1087,14 @@ header{
 .footer-box3-map{
     flex-basis: 40%;
     margin-top:30px ;
+    border-radius: 20px;
 }
 
 .footer-box3-map>iframe{
     width: 100%;
     height: 300px;
     border: none;
+    border-radius: 20px;
 }
 
 /* Footer Flex Map End */
@@ -1116,6 +1117,16 @@ header{
     border-radius: 10px;
     padding: 10px;
 }
+
+.footer-icon-box{
+    transform: scale(1);
+    transition: .3s ease-in-out;
+}
+
+.footer-icon-box:hover{
+    transform: scale(1.1);
+    background: var(--accent-color);
+}
 /* Footer Icons End */
 /* Copyright Line Start*/
 .copyright{
@@ -1135,140 +1146,231 @@ header{
 /* Copyright Line End */
 /* Footer End */
 
-/* Responsive Design Start*/
-/* For Tablet Start */
-@media (max-width:992px) {
-    .container{
-      max-width: 95%;
-    }
+
+
+
+
+
+
+
+
+
+/* Mobile Responsive Start */
+@media (max-width:600px) {
     
-    #scrollbtn{
-        display: none;
-    }
     /* Header */
-    
-    .header-content{
-        flex-direction: column;
-        align-items: center;
-        text-align: center;
-        height: auto;
-        padding: 10px 0px;
-        word-spacing: 1px;
-        letter-spacing: .6px;
-        gap: 10px;
-    }
 
-    .left ul, .right ul{
-        justify-content: flex-start;
-        flex-wrap: wrap;
-        gap: 2px;
-
-    }
-    
-    .left ul li a, .right ul li a{
-        font-size: 14px;
-        line-height: 0px;
-    }
-     /* Header */
-
-    /* Contact */
-    .contect{
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        text-align: center;
-        gap: 15px;
-    }
-
-    .info-container{
-        justify-content: start;
-    }
-
-    .info p {
-       font-size: 14px;
-       line-height: 1.5;
-    }
-
-    .contect-section h3{
+    .header-content .left{
         display: none;
-
     }
-    /* Contact */
 
-    /* Navbar */
-
-    .navbar ul{
-        flex-wrap: wrap;
-        align-items: center;
-        gap: 10px;
-        padding: 10px;
+    .header-content>.right>ul>li>a>i{
+        display: none;
     }
     
-    .navbar ul li::after{
-       display: none;
+    /* Header */
+
+    /* Contect */
+
+    .contect-section .container>h3{
+        display: none;
     }
+    .contect .info-container{
+        display: none;
+    }
+
+    .contect .logo img{
+        display: block;
+    }
+    /* Contect */
+
+    /* Navbar */
+    .navbar ul li a{
+        display: none;
+    }
+
+    .navbar ul li::after{
+        display: none;
+    }
+
+   .mobile-navbar{
+    width: 100%;
+    height: 100vh;
+    position: absolute;
+    top: 0;
+    right: 0;
+    margin: 0 auto;
+    z-index: 2;
+    background: white;
+    display: 0;
+   }
+
+   .mobile-navbar>ul>li{
+    list-style: none;
+    margin-top: 20px;
+    margin-left: 30px;
+    overflow:scroll;
+   }
+
+   .mobile-navbar>ul>li>a{
+    text-decoration: none;
+    color: var(--secandary);
+    font-size: 24px;
+    letter-spacing: 1px;
+   }
     /* Navbar */
 
-    /* Images */
-
+    /* Image */
     .slider{
         width: 100%;
         height: 200px;
     }
-    
-    .images img{
-        width: 100%;
-        height: 200px;
+    .slider .images{
+     width: 100%;
+     height: 100%;
     }
-    /* Images */
 
-    /* Classroom Teacher */
-    .classroom{
-        gap: 10px;
-        justify-content: flex-start;
-        align-items: center;
-        margin-left: 30px;
+    .slider .images img{
+        width: 100%;
+        height: 100%;
     }
-    /* Classroom Teacher */
+    /* Image */
+    /* Detail  */
+    .p1-details{
+        text-align: justify;
+        font-size: 16px;
+        font-weight: 300;
+        line-height: 20px;
+        letter-spacing: .7px;
+    }
+
+    .detail-items ul{
+        width: 100%;
+       display: flex;
+       justify-content: flex-start;
+       flex-wrap: wrap;
+    }
+
+    .detail-items ul li{
+        flex-basis:100%;
+        text-align: center;
+
+    }
+
+    .classroom{
+        justify-content: flex-start;
+        gap: 10px;
+        padding-bottom: 0;
+        margin-bottom: 0;
+    }
+    /* Detail */
 
     /* Chairman's */
     .ch-message{
-       flex-wrap: wrap;
-
+        margin-top: 15px;
+        flex-direction: column;
     }
 
     .ch-left,.ch-right{
-       flex-basis: 100%;
-       background: var(--secandary);
+        background: var(--secandary);
+        padding-bottom: 10px;
+        overflow: hidden;
+    }
+    .ch-message{
+        background: var(--secandary);
+        padding-bottom: 20px;
+    }
+
+    .ch-sir .ch-h1{
+        margin-top: 20px;
     }
     /* Chairman's */
 
-    /* Acivment And Activity */
-      .activity{
-        flex-direction: column;
-      }
+    /* Achivment And Activity */
 
-      .act-box{
-        width: 100%;
+    .activity{
         flex-direction: column;
         justify-content: center;
         align-items: center;
-        padding: 10px 0;
-      }
+    }
+    .act-text{
+        margin-left: 20px;
+    }
+    
+    .act-box{
+        flex-direction: column;
+        margin-top: 20px;
+    }
 
-      .act-box .act-img{
+    .act-box .act-img{
         width: 100%;
-      }
+        height: 300px;
+    }
 
-      .act-box .act-img img{
+    .act-box .act-img img{
         width: 100%;
-        height: 200px;
-      }
-      .act-box .act-img h3{
-        text-align: center;
-      }
-    /* Acivment And Activity */
+        height: 100%;
+    }
+
+    /* Achivment And Activity */
+
+    /* Photo & Gallery */
+    .gallery-btn{
+        flex-direction: column;
+        gap: 10px;
+        padding: 20px;
+    }
+
+    .gallery-btn>.btn{
+        margin-top: 0px;
+    }
+
+    .gallery-items{
+        flex-direction: column;
+        gap: 0px;
+    }
+    .gallery-box{
+        padding: 20px;
+    }
+    .gallery-box P{
+        font-size: 12px;
+    }
+    /* Photo & Gallery */
+
+    /* Exlpore*/
+    .explore-item-grid{
+        grid-template-columns:repeat(1, 1fr);
+    }
+    /* Explore */
+
+    /* Innovate */
+    .innovate-flex{
+        flex-direction: column;
+    }
+
+    .innovate-right-side{
+        grid-template-columns: repeat(1, 1fr);
+        margin-top: 20px;
+    }
+
+    .innovate-flex{
+        padding-bottom: 20px;
+    }
+    /* Innovate */
+
+    /* News */
+    .news-flex{
+        flex-direction: column;
+        gap: 20px;
+        padding-bottom: 30px;
+    }
+    /* News */
+
+    /* Footer */
+    .footer-flex{
+        flex-direction: column;
+        padding-bottom: 10px;
+    }
+    /* Footer */
 }
-
-/* For Mobile End */
-/* Responsive Design For Tablet End */
+/* Mobile Responsive End */
