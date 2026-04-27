@@ -1157,7 +1157,10 @@ header{
 
 /* Mobile Responsive Start */
 @media (max-width:600px) {
-    
+
+    #scrollbtn{
+        display: none;
+    }
     /* Header */
 
     .header-content .left{
@@ -1182,9 +1185,29 @@ header{
     .contect .logo img{
         display: block;
     }
+
+    .contect-section{
+        position: relative;
+        margin-top: 0;
+    }
+    /* Hamberger menu */
+    .humberger-icon{
+        position: absolute;
+        top: 10px;
+        right: 10px;
+    }
+
+    .humberger-icon>i{
+        font-size: 30px;
+    }
+    /* Hamberger menu */
+    
     /* Contect */
 
     /* Navbar */
+    .navbar{
+        margin-top: 0;
+    }
     .navbar ul li a{
         display: none;
     }
@@ -1196,28 +1219,88 @@ header{
    .mobile-navbar{
     width: 100%;
     height: 100vh;
-    position: absolute;
+    position: fixed;
     top: 0;
-    right: 0;
+    left: -500px;
+    transition: .5s ease;
     margin: 0 auto;
-    z-index: 2;
-    background: white;
-    display: 0;
+    z-index: 10;
+    background: rgb(255, 255, 255);
+    display:block;
+    overflow-y: auto;
    }
 
-   .mobile-navbar>ul>li{
+   .ul-scroll{
+    width: 100%;
+    height: 400px;
+    overflow-y: auto;
+    margin-top: 20px;
+    padding-bottom: 10px;
+   }
+
+   .mobile-navbar>.ul-scroll>ul>li{
     list-style: none;
     margin-top: 20px;
     margin-left: 30px;
-    overflow:scroll;
+    
    }
 
-   .mobile-navbar>ul>li>a{
+   .mobile-navbar>.ul-scroll>ul>li>a{
     text-decoration: none;
     color: var(--secandary);
     font-size: 24px;
     letter-spacing: 1px;
    }
+
+    .mobile-nav-icon{
+    display: flex;
+    justify-content: center;
+    align-items: c;
+    gap: 20px;
+    font-size: 24px;
+   }
+
+   .mobile-nav-icon-box{
+    border: 1px solid rgb(0, 0, 0);
+    border-radius: 7px;
+    transform: scale(1);
+    transition: .3s ease-in-out;
+   }
+
+   .mobile-nav-icon-box:hover{
+    transform: scale(1.1);
+    background: var(--primary);
+    color: white;
+   }
+
+   .mobile-nav-icon-box>i{
+    padding: 10px;
+    margin: 0 auto;
+    display: table;
+    
+   }
+
+   .mobile-navbar>.close-icon{
+    position: absolute;
+    right: 10px;
+    top: 10px;
+    width: 50px;
+    height: 50px;
+    background: var(--secandary);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 10px;
+    border-radius: 7px;
+    border: none;
+   }
+
+   .mobile-navbar>.close-icon>i{
+    font-size: 30px;
+    color: white;
+   }
+
+  
     /* Navbar */
 
     /* Image */
